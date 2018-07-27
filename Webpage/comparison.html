@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Comparison</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+	    /* Some custom styles to beautify this example */
+	    .demo-content{
+	        padding: 15px;
+	        font-size: 18px;
+	        min-height: 300px;
+	        margin-bottom: 10px;
+	    }
+
+	    .bs-navbar{
+	    	/* margin: 20px; */
+	    }
+	</style>
+</head>
+<body>
+
+	<div class="bs-navbar">
+	    <nav class="navbar navbar-default">
+	        <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a href="index.html" class="navbar-brand"><span class="sitename">Lattitude</span>
+</a>
+	        </div>
+	        <!-- Collection of nav links, forms, and other content for toggling -->
+	        <div id="navbarCollapse" class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav navbar-right">
+	                <li class="dropdown">
+	                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Plots <b class="caret"></b></a>
+	                    <ul class="dropdown-menu">
+	                        <li><a href="maxtemperature.html">Max Temperature</a></li>
+	                        <li><a href="humidity.html">Humidity</a></li>
+	                        <li><a href="cloudiness.html">Cloudiness</a></li>
+	                        <li><a href="windspeed.html">Wind Speed</a></li>
+	                    </ul>
+	                </li>
+
+	                <li class="active"><a href="comparison.html">Comparison</a></li>
+	                <li><a href="cities.html">Data</a></li>
+
+	            </ul>
+	        </div>
+	    </nav>
+	</div>
+
+
+	<div class="plots">
+		<h1>Comparison: Latitude Vs X</h1>
+		<p>Click any plot to get an in depth analysis</p>
+	</div>
+
+
+   	<div class="container">
+        <!--Row with two equal columns-->
+        <div class="row">
+            
+
+            <div class="col-sm-6">
+                <div class="demo-content">
+                	<h2>vs. Max Temperature</h2>
+                	<a href="maxtemperature.html">
+						<img src="images/maxtemperature.png" alt="City Latitude Vs. Max Temperature"/>
+					</a>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="demo-content bg-alt">
+                	<h2>vs. Humidity</h2>
+                	<a href="humidity.html">
+						<img src="images/humidity.png" alt="City Latitude Vs. Humidity"/>
+					</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="demo-content">
+                	<h2>vs. Cloudiness</h2>
+                	<a href="Cloudiness.html">
+						<img src= "images/cloudiness.png" alt="City Latitude Vs. Cloudiness"/>
+					</a>
+            	</div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="demo-content bg-alt">
+                	<h2>vs. Windspeed</h2>
+                	<a href="Windspeed.html">
+						<img src="images/windspeed.png" alt="City Latitude Vs. Windspeed" /> 
+					</a>
+            	</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

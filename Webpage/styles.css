@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+h1 { 
+	color: #3EAEDE;
+	font-family: 'Book Antiqua', serif;
+	font-weight: bold;
+}
+
+h2 {
+	color: #3EAEDE;
+	font-family: 'Book Antiqua', serif;
+	font-weight: bold;
+}
+
+.plots {
+    margin-left: 20px;
+}
+
+.sitename {
+	background-color: #3EAEDE;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 16px;
+	font-size: 1em;
+}

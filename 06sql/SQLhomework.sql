@@ -239,18 +239,40 @@ Join category
 on category.category_id = film_category.category_id
 group by category.name
 order by sum(amount) desc
-limit 0,5
+limit 0,5;
 
 
+-- 8a. In your new role as an executive, you would like to have an easy way of viewing the 
+-- Top five genres by gross revenue. Use the solution from the problem above to create a view. 
+-- If you haven't solved 7h, you can substitute another query to create a view.
 
+Create View top_five_genres_by_gross_revenue
+As 
+Select category.name, sum(amount) 'gross revenue'
+from store
+Join inventory
+on store.store_id = inventory.store_id
+Join rental
+on rental.inventory_id = inventory.inventory_id
+Join payment
+on payment.rental_id = rental.rental_id
+join film
+on film.film_id = inventory.film_id
+Join film_category
+on film_category.film_id = film.film_id
+Join category
+on category.category_id = film_category.category_id
+group by category.name
+order by sum(amount) desc
+limit 0,5;
 
+-- 8b. How would you display the view that you created in 8a?
+Select *
+from top_five_genres_by_gross_revenue;
 
-
-
-
-
-
-
+-- 8c. You find that you no longer need the view `top_five_genres`. 
+-- Write a query to delete it.
+Drop view top_five_genres_by_gross_revenue
 
 
 

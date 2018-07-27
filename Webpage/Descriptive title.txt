@@ -1,0 +1,16 @@
+Latitude Vs Temperature Plot
+
+The weather becomes significantly warmer as one approaches the equator. 
+
+Latitude vs Humidity Plot
+
+The southern hemisphere tends to be warmer than the northern hemisphere during this time of the year. This may be due to the tilt of earth.
+
+Latitude Vs cloudiness Plot
+
+There is no strong relationship between latitude and cloudiness. However, it is interesting to see that a strong band of cities sits at 0, 80, and 100% cloudiness.
+
+Latitude Vs windspeed plot
+
+There is no strong relationship between latitude and wind speed. However, in northern hemispheres there is a flurry of cities with over 20 mph of wind.
+
