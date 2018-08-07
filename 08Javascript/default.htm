@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>UFO Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">UFO Sightings
+            <img class="nav-ufo" src="static/images/ufo.svg">
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>UFO Sightings</h1>
+      <p>The Truth is Out There</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <form action="#">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="thedatetime">Enter a Date</label>
+                        <input class="form-control" id="thedatetime" type="text" placeholder="1/11/2011">
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="ufo-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">Date</th>
+                  <th class="table-head">City</th>
+                  <th class="table-head">State</th>
+                  <th class="table-head">Country</th>
+                  <th class="table-head">Shape</th>
+                  <th class="table-head">Duration</th>
+                  <th class="table-head">Comments</th>
+                </tr>
+              </thead>
+              <!-- <tbody></tbody> -->
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">UFO Sightings</span>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
+
+  <script type="text/javascript">
+	window.onload = function() { 
+//		alert ("Just Loaded");
+		document.getElementById("filter-btn").addEventListener("click", function() {
+			myFunction();
+		});  
+		
+		myFunction();
+	}
+  
+  
+    function myFunction() { 
+
+	input = document.getElementById("thedatetime");
+	inputvalue = document.getElementById("thedatetime").value
+
+//alert(inputvalue);
+	
+      // Store the data from the data.js file in an Array variable
+      var projectdata = Array.from(data);
+
+      // Store a reference to the table above (named "ufo-table") in a variable
+      var datatable = document.getElementById("ufo-table");
+
+      // Store the html "tbody" tag in a variable
+      var tbody = document.createElement("tbody");
+
+      // This is the length of your project data array (meaning, how many "rows" are in the dataset)
+      // alert(projectdata.length);
+
+      for (i = 0; i < projectdata.length; i++) {
+          // start at i=0, do the stuff within the curly braces, then add 1 to i AS LONG AS i is less than projectdata.length
+          // once i = projectdata.length then go to the stuff OUTSIDE of the curly braces
+
+          // Create an html row element for your table and store it to a variable
+          var tr = document.createElement("tr");
+
+          // Create a variable to hold the number of elements in each row
+          // var numkeys = Object.keys(datatable[i]).length;
+
+
+          for (var key in projectdata[i]) {
+            // for each key (the name of value) in row i (the one javascript is currently reading... )
+
+            if (projectdata[i].hasOwnProperty(key)) {
+              // Create an html column element for your table and store it to a variable
+              var td = document.createElement("td");
+
+              // 
+              td.appendChild(document.createTextNode(projectdata[i][key]));
+
+              tr.appendChild(td);
+            }
+
+          }
+
+          // append the new row to a table
+          tbody.appendChild(tr);
+
+      } // END OF for (i = 0; i < projectdata.length; i++)
+
+
+      // append the tbody section with ALL the rows and columns to the table!  :-)
+      datatable.appendChild(tbody);
+
+	  // Declare variables
+	  var inputt, filtert, tablet, trt, tdt, i;
+	  inputt = document.getElementById("thedatetime");
+	  filtert = inputt.value.toUpperCase();
+	  tablet = document.getElementById("ufo-table");
+	  trt = tablet.getElementsByTagName("tr");
+
+	  // Loop through all table rows, and hide those who don't match the search query
+	  for (i = 0; i < trt.length; i++) {
+		tdt = trt[i].getElementsByTagName("td")[0];
+		if (tdt) {
+		  if (tdt.innerHTML.toUpperCase().indexOf(filtert) > -1) {
+			trt[i].style.display = "";
+		  } else {
+			trt[i].style.display = "none";
+		  }
+		}
+	  }
+	  
+    } // END OF FUNCTION	
+  </script>
+
+</body>
+
+</html>
